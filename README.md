@@ -31,7 +31,6 @@ const App = () => {
 import { useFlags, useFlag, Flag } from 'pandaflag-react'
 
 const AllFlags = () => {
-  // Get All Flags
   const flagsData: Flag[] = useFlags()
 
   if (flagData.isLoading) {
@@ -42,7 +41,6 @@ const AllFlags = () => {
 }
 
 const OneFlag = () => {
-  // Get one flag
   const flagData: Flag = useFlag('maps_v2')
   //  {
   //    isLoading: false,
