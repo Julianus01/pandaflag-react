@@ -1,26 +1,26 @@
 import React, { createContext, ReactNode, useEffect, useState } from 'react'
 import { io, Socket } from 'socket.io-client'
 
-export interface IPandaflagContext {
+export interface PandaflagContextState {
   isLoading: boolean
-  flags: IPandaFlag[]
+  flags: Flag[]
 }
 
-export interface IPandaFlag {
+export interface Flag {
   id: string
   name: string
   description: string
   enabled: boolean
 }
 
-const defaultState: IPandaflagContext = {
+const defaultState: PandaflagContextState = {
   isLoading: true,
   flags: [],
 }
 
-export const PandaflagContext = createContext<IPandaflagContext>(defaultState)
+export const PandaflagContext = createContext<PandaflagContextState>(defaultState)
 
-export interface IPandaflagProviderProps {
+export interface PandaflagProviderProps {
   apiKey: string
   environment: string
   children: ReactNode | JSX.Element
@@ -28,8 +28,8 @@ export interface IPandaflagProviderProps {
 
 const PANDAFLAG_SOCKET_URL: string = 'ws://api.pandaflag.com/'
 
-export function PandaflagProvider({ apiKey, environment, children }: IPandaflagProviderProps) {
-  const [flags, setFlags] = useState<IPandaFlag[]>([])
+export function PandaflagProvider({ apiKey, environment, children }: PandaflagProviderProps) {
+  const [flags, setFlags] = useState<Flag[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(true)
 
   useEffect(() => {

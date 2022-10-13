@@ -1,8 +1,8 @@
 import { useContext } from 'react'
-import { IPandaflagContext, PandaflagContext } from '../context/PandaflagContext'
+import { PandaflagContextState, PandaflagContext } from '../context/PandaflagContext'
 
-export type IUseFlags = IPandaflagContext
+export type IUseFlags = PandaflagContextState
 
 export function useFlags(): IUseFlags {
-  return useContext<IPandaflagContext>(PandaflagContext) as IUseFlags
+  return useContext<PandaflagContextState>(PandaflagContext) as IUseFlags
 }
