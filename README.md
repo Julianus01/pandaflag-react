@@ -1,1 +1,1 @@
-# React Pandaflag feature flags integration
+# Pandaflag React feature flags integration
