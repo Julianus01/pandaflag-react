@@ -15,7 +15,8 @@
     "start": "rollup -c -w",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prepublishOnly": "npm build"
   },
   "jest": {
     "transform": {
