@@ -10,13 +10,15 @@ npm install pandaflag-react
 
 ## Setup the Provider
 
-```
-import { PandaflagProvider } from  'react-pandaflag'
+```tsx
+import { PandaflagProvider } from 'react-pandaflag'
 
 const App = () => {
-  return <PandaflagProvider apiKey={PROJECT_API_KEY} environment={ENVIRONMENT}>
-    ...
-  </PandaflagProvider>
+  return (
+    <PandaflagProvider apiKey={PROJECT_API_KEY} environment={ENVIRONMENT}>
+      ...
+    </PandaflagProvider>
+  )
 }
 
 // PROJECT_API_KEY = Your projects api key found in Pandaflag app In Projects page
@@ -25,7 +27,7 @@ const App = () => {
 
 ## Evaluate flags
 
-```
+```tsx
 import { useFlags, useFlag, Flag } from 'pandaflag-react'
 
 const AllFlags = () => {
