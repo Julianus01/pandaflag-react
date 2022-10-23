@@ -33,7 +33,7 @@ import { useFlags, useFlag, Flag } from 'pandaflag-react'
 const AllFlags = () => {
   const flagsData: Flag[] = useFlags()
 
-  if (flagData.isLoading) {
+  if (flagsData.isLoading) {
     return <div>Loading...</div>
   }
 
