@@ -26,14 +26,14 @@ export interface PandaflagProviderProps {
   children: ReactNode | JSX.Element
 }
 
-const PANDAFLAG_SOCKET_URL: string = 'ws://api.pandaflag.com/'
+const PANDAFLAG_SOCKET_URL: string = 'wss://api.pandaflag.com/'
 
 export function PandaflagProvider({ apiKey, environment, children }: PandaflagProviderProps) {
   const [flags, setFlags] = useState<Flag[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(true)
 
   useEffect(() => {
-    const socket: Socket = io(PANDAFLAG_SOCKET_URL, { query: { apiKey, environment } })
+    const socket: Socket = io(PANDAFLAG_SOCKET_URL, { secure: true, query: { apiKey, environment } })
 
     socket.on('connect', () => {
       socket.on('newFlags', (data: any) => {

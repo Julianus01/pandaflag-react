@@ -1,6 +1,6 @@
 {
   "name": "pandaflag-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Pandaflag feature flags integration",
   "author": "Julianus01",
   "license": "Apache-2.0",
