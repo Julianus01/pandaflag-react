@@ -26,7 +26,7 @@ export interface PandaflagProviderProps {
   children: ReactNode | JSX.Element
 }
 
-const PANDAFLAG_SOCKET_URL: string = 'wss://api.pandaflag.com/'
+const PANDAFLAG_SOCKET_URL: string = 'wss://api.pandaflag.net/'
 
 export function PandaflagProvider({ apiKey, environment, children }: PandaflagProviderProps) {
   const [flags, setFlags] = useState<Flag[]>([])
